@@ -23,13 +23,7 @@ jobs:
         
       - name: Build with TrueSTUDIO
         uses: carlalbrecht/atollic-truestudio-action@v1
-<<<<<<< HEAD
-        with:
-          project: /*
-          build: Debug/
-=======
         
->>>>>>> 9c864cac7d97e9699b0d9730591d50728b4ee733
       - name: Upload firmware release asset
         uses: actions/upload-release-asset@v1
         env:
