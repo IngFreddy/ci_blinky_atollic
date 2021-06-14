@@ -24,12 +24,12 @@ jobs:
       - name: Build with TrueSTUDIO
         uses: carlalbrecht/atollic-truestudio-action@v1
         
-      - name: Upload firmware release asset
-        uses: actions/upload-release-asset@v1
+      - name: Upload release binary
+        uses: actions/upload-release-asset@v1.0.2
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ github.token }}
         with:
-          upload_url: ${{ github.event.release.upload_url }}
-          asset_path: ./firmware/example-project/Debug
-          asset_name: example-project.hex
+          upload_url: ${{ steps.get_release.outputs.upload_url }}
+          asset_path: ./STM_Atollic_Example/blinky/Debug
+          asset_name: blinky.elf
           asset_content_type: binary/octet-stream
