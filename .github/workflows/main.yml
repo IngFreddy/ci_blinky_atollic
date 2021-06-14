@@ -20,11 +20,10 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
+        
       - name: Build with TrueSTUDIO
         uses: carlalbrecht/atollic-truestudio-action@v1
-        with:
-          project: /*
-          build: /Debug
+        
       - name: Upload firmware release asset
         uses: actions/upload-release-asset@v1
         env:
